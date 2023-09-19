@@ -1,0 +1,43 @@
+@import 'app/styles/abstracts/_variables.scss';
+@import 'app/styles/abstracts/_mixins.scss';
+
+.publisherInfo{
+    display: flex;
+    gap: 20px;
+    ul {
+        &:first-child{
+            flex: 50%;
+        }
+        &:last-child{
+            flex: 50%;
+        }
+        li{
+            flex: 50%;
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 2rem;
+            &:last-child{
+                padding-bottom: 0;
+            }
+            span {
+                font-size: 16px;
+                font-weight: 200;
+                &:first-child{
+                    flex: 50%;
+                    margin-right: 10px;
+                    color: $violet;
+                }
+                &:last-child{
+                    flex: 50%;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(mobileandrotate) {
+    .publisherInfo{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,143 @@
+@import 'app/styles/abstracts/mixins';
+@import 'app/styles/abstracts/_variables.scss';
+
+@include breakpoint(mobile) {
+    .header {
+        padding-top: 10px;
+    }
+}
+
+.navbar{
+    display: flex;
+    height: 72px;
+    align-items: center;
+    position: relative;
+
+    .logo{
+        cursor: pointer;
+    }
+
+    .formSearch{
+        margin: 0px 5rem;
+        input{
+            height: 36px;
+            width: 376px;
+            border: none;
+            background-color: $light-gray;
+            padding-left: 15px;
+            &::placeholder {
+                color: $deep-gray;
+                opacity: 1; /* Firefox */
+              }
+              
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $deep-gray;
+            }
+            
+            &::-ms-input-placeholder { /* Microsoft Edge */
+            color: $deep-gray;
+            }
+        }
+        button{
+            border: none;
+            margin-left: -30px;
+            cursor: pointer;
+        }
+    }
+
+    .menus{
+        display: flex;
+        li {
+            list-style-type: none;
+            padding: 0px 1.5rem;
+            a{
+                color: $deeper-gray;
+                text-decoration: none;
+                font-weight: 100;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+    }
+    .icons{
+        margin-left: 60px;
+        display: flex;
+        height: 20px;
+        li {
+            list-style-type: none;
+            cursor: pointer;
+            border-left: 1px solid $purple-accent;
+            padding: 0px 10px;
+            &:first-child {
+                border-left: none;
+            }
+        }
+    }
+   
+}
+
+@include breakpoint(largedesktop)  {
+    .hamburger, .mobileSearchIcon{
+        display: none !important;
+    }
+    .menuItems{
+        display: none;
+    }
+}
+
+@include breakpoint(desktop) {
+    .hamburger, .mobileSearchIcon{
+        display: none !important;
+    }
+    .menuItems{
+        display: none;
+    }
+}
+
+@include breakpoint(tabletmobile) {
+    .menuItems {
+        position: absolute;
+        right: 10px;
+        top: 72px;
+        background-color:  $light-gray;
+        z-index: 99;
+        transition: all .5s ease;
+        li {
+            list-style-type: none;
+            padding: 12px;
+            cursor: pointer;
+            a{
+                color: $deeper-gray;
+                text-decoration: none;
+                font-weight: 100;
+                font-size: 14px;
+            }
+            &:hover{
+                background-color: $deeper-gray;                a{
+                    color: $white;
+                }
+            }
+        }
+    }
+    .navbar{
+        justify-content: space-between;
+        border-bottom: 1px solid $purple-accent;
+    }
+    .mobileSearchIcon{
+        cursor: pointer;
+        margin-left: 60px;
+    }
+    .hamburger{
+        display: flex;
+        height: 20px;
+        li {
+            list-style-type: none;
+            cursor: pointer;
+            padding: 0px 10px;
+        }
+    }
+
+    .menus, .icons, .formSearch{
+        display: none !important;
+    }
+}

@@ -1,0 +1,29 @@
+@import 'app/styles/abstracts/_variables.scss';
+
+.breadcrumb{
+    padding: 2rem 0px;
+    list-style: none;
+
+    li {
+        display: inline;
+        font-size: 14px;
+
+        +li:before {
+            padding: 8px;
+            content: "/\00a0";
+        }
+
+        a {
+            color: $deep-gray;
+            font-weight: 300;
+            text-decoration: none;
+            &:hover{
+                color: #01447e;
+            }
+        }
+        &:last-child{
+            color: $purple-black;
+            font-weight: 300;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+
+.rate {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    .numericValue{
+        margin-left: 1rem;
+    }
+
+    &:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+        &:checked ~ label {
+            color: #000;    
+        }
+    }
+
+    &:not(:checked) > label {
+        float:left;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:25px;
+        color:#ccc;
+
+        &:before {
+            content: '★ ';
+        }
+
+        &:hover,
+        &:hover ~ label{
+            color: #deb217;  
+
+        }
+    }
+
+    input:checked + label:hover,
+    input:checked + label:hover ~ label,
+    input:checked ~ label:hover,
+    input:checked ~ label:hover ~ label,
+    label:hover ~ input:checked ~ label {
+      color: #000;
+    }
+}
+

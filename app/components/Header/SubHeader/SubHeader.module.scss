@@ -1,0 +1,45 @@
+@import 'app/styles/abstracts/_variables.scss';
+@import 'app/styles/abstracts/mixins';
+
+.subHeaderBorder{
+    border-top: 1px solid $purple-accent;
+    border-bottom: 1px solid $purple-accent;
+}
+
+.subHeader{
+    height: 72px;
+    display: flex;
+    ul{ 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      li {
+        list-style-type: none;
+        margin-right: 3rem;
+        a{
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 100;
+            color: $body-text;
+        }
+        &:nth-child(6) {
+          margin-left: 10rem;
+        }
+        &:last-child{
+          margin-right: 0px;
+          a {
+              color: $purple-accent;
+              padding: 10px 15px;
+              border: 1px solid $purple-accent;
+          }
+        }
+      }
+   }
+}
+
+@include breakpoint(tabletmobile) {
+  .subHeaderBorder{
+      display: none !important;
+  }
+}

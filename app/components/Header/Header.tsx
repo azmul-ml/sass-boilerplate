@@ -39,7 +39,7 @@ export default function Header() {
           <li onClick={() => setIsShowMobileMenu(!isShowMobileMenu)} role="listitem" tabIndex={8}><Image src="/assets/svg/hamburger.svg" alt="Hamburger" width={20} height={20} /></li>
         </ul>
 
-        <ul role="navigation" className={cx(styles.menuItems, {'dn': !isShowMobileMenu, 'db': isShowMobileMenu})}>
+        <ul role="navigation" className={cx(styles.menuItems, {'displayNone': !isShowMobileMenu, 'displayBlock': isShowMobileMenu})}>
           <MobileMenus />
         </ul>
         

@@ -1,0 +1,143 @@
+@import 'app/styles/abstracts/_variables.scss';
+@import 'app/styles/abstracts/_mixins.scss';
+
+.homeHero{
+    display: flex;
+    flex-direction: column;
+
+    .sliderMainSection{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        .bookInfoPart{
+            display: flex;
+            flex: 50%;
+            padding: 2rem 2rem 0 0;
+
+            .sliderNavigation{
+               flex: 5%;
+               div{
+                width: 2px;
+                margin-bottom: 10px;
+                background-color: $light-gray;
+               }
+               .active{
+                 background-color: $purple-accent;
+               }
+            }
+            .bookInfo{
+                flex: 95%;
+                button:first-child{
+                    width: 132px;
+                    height: 42px;
+                    background-color: $white;
+                    border: 1px solid $purple-accent;
+                    color: $purple-accent;
+                    border-radius: 3px;
+                }
+                p{
+                    color: $body-text;
+                    line-height: 24px;
+                    font-weight: 200;
+                }
+                button:last-child{
+                    width: 190px;
+                    height: 49px;
+                    background-color: $purple-accent;
+                    border: none;
+                    color: $white;
+                }
+            }
+        }
+        .bookImagePart{
+            flex: 50%;
+            display: flex;
+            .textPart{
+               flex: 35%;
+               font-size: 18px;
+               color: #201F1F;
+               text-transform: uppercase;
+               letter-spacing: 3px;
+               padding-left: 1rem;
+            }
+            .imagePart{
+                flex: 65%;
+                p{
+                    text-align: right;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+
+    .sliderArrow{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+            li{
+                list-style-type: none;
+                color: $purple-accent;
+                border: 1px solid $purple-accent;
+                border-radius: 50%;
+                width: 32px;
+                text-align: center;
+                cursor: pointer;
+                height: 32px;
+                font-size: 40px;
+                line-height: 25px;
+            }
+    }
+
+    section:last-child{
+        display: none;
+    }
+}
+
+@include breakpoint(tablet) {
+    .bookInfoPart{ 
+        flex: 60% !important;
+    }
+    .bookImagePart{
+        flex: 40% !important;
+        justify-content: center;
+        align-items: center;
+        .imagePart{
+            img{
+                width: 286px !important;
+                height: 410px !important;
+            }
+        }
+   }
+}
+
+@include breakpoint(tabletmobile) {
+    .sliderNavigation, 
+    .textPart,
+    .imagePart p{
+        display: none;
+    }
+}
+
+@include breakpoint(mobileandrotate) {
+    .sliderMainSection{
+        flex-direction: column !important;
+    }
+    .bookInfoPart {
+        padding-top: 0 !important;
+        .bookInfo{
+            h1{
+                font-size: 28px;
+            }
+        }
+    }
+    .bookImagePart{
+        .imagePart{
+            display: flex;
+            justify-content: center;
+            margin: 34px 0;
+        }
+   }
+}

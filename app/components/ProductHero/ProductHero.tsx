@@ -1,11 +1,11 @@
-import styles from "./Hero.module.scss";
+import styles from "./ProductHero.module.scss";
 import Image from "next/image";
 
 import Rate from "../Rate/Rate";
 import AddItem from "../AddItem/AddItem";
 import PublisherInfo from "../PublisherInfo/PublisherInfo";
 
-export default function Hero () {
+export default function ProductHero () {
     return ( 
         <div className={styles.heroContainer} aria-label="Book Details Information">
             <aside className={styles.bookList} aria-label="Book List Images">

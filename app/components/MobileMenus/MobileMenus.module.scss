@@ -1,0 +1,57 @@
+
+@import 'app/styles/abstracts/mixins';
+@import 'app/styles/abstracts/_variables.scss';
+
+.mobileMenuHide{
+    height: 0;
+    position: absolute;
+    top: -300px;
+}
+.mobileMenuShow{
+    position: relative;
+    top: 0;
+    transition: all 0.5s ease;
+}
+
+.mobileMenus{
+    display: flex;
+    flex-direction: column;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            list-style-type: none;
+            padding: 1.5rem 12px;
+            cursor: pointer;
+            a{
+                color: $deeper-gray;
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 14px;
+                &:hover{
+                    color: $purple-accent;
+                }
+            }
+            
+        }
+
+        &:last-child{
+            border-top: 1px solid $purple-accent;
+            border-bottom: 1px solid $purple-accent;
+            li{
+                &:last-child{
+                    margin-right: 0px;
+                    a {
+                        color: $purple-accent;
+                        padding: 10px 15px;
+                        border: 1px solid $purple-accent;
+                    }
+                  }
+            }
+        }
+    }
+}

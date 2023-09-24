@@ -1,8 +1,15 @@
 
 .displayNone{
-    display: none;
+    visibility: hidden;
 }
 
 .displayBlock{
     display: block;
+}
+
+.borderBtmPurple{
+    border-bottom: 1px solid $purple-accent;
+}
+.borderBtmNone{
+    border-bottom: none;
 }

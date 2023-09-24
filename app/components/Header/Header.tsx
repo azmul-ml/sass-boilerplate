@@ -11,7 +11,7 @@ export default function Header() {
   const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
   return (
     <header>
-      <nav className={cx("container-xxl", styles.navbar)}>
+      <nav className={cx("container-xxl", styles.navbar, {"borderBtmNone": isShowMobileMenu})}>
         <div aria-label="Logo and Search Box" aria-describedby="Logo and mobile Search Box">
           <span role="figure" tabIndex={1} className={styles.logo}>
             <Image role="logo" src="/assets/images/logo.png" aria-live="polite" alt="LOGO" width={140} height={35} />
@@ -38,12 +38,10 @@ export default function Header() {
           <li role="listitem" tabIndex={9}><Image src="/assets/svg/profile.svg" alt="Profile" width={20} height={20} /></li>
           <li onClick={() => setIsShowMobileMenu(!isShowMobileMenu)} role="listitem" tabIndex={8}><Image src="/assets/svg/hamburger.svg" alt="Hamburger" width={20} height={20} /></li>
         </ul>
-
-        <ul role="navigation" className={cx(styles.menuItems, {'displayNone': !isShowMobileMenu, 'displayBlock': isShowMobileMenu})}>
-          <MobileMenus />
-        </ul>
-        
       </nav>
+      <div role="navigation" className={styles.menuItems}>
+          <MobileMenus isShowMobileMenu={isShowMobileMenu} />
+        </div>
       <SubHeader />
     </header>
   )

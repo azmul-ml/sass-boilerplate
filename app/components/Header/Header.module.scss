@@ -90,35 +90,11 @@
         display: none !important;
     }
     .menuItems{
-        display: none;
+        display: none !important;
     }
 }
 
 @include breakpoint(tabletmobile) {
-    .menuItems {
-        position: absolute;
-        right: 10px;
-        top: 72px;
-        background-color:  $light-gray;
-        z-index: 99;
-        transition: all .5s ease;
-        li {
-            list-style-type: none;
-            padding: 12px;
-            cursor: pointer;
-            a{
-                color: $deeper-gray;
-                text-decoration: none;
-                font-weight: 100;
-                font-size: 14px;
-            }
-            &:hover{
-                background-color: $deeper-gray;                a{
-                    color: $white;
-                }
-            }
-        }
-    }
     .navbar{
         justify-content: space-between;
         border-bottom: 1px solid $purple-accent;

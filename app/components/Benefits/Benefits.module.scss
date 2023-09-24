@@ -1,0 +1,45 @@
+@import 'app/styles/abstracts/_variables.scss';
+@import 'app/styles/abstracts/_mixins.scss';
+
+.benefits{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    flex-wrap: wrap;
+
+    li{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        margin-top: 34px;
+        span{
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+    }
+
+    .borderItem{
+        border-left: 1px solid $purple-accent;
+        border-right: 1px solid $purple-accent;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@include breakpoint(tabletmobile) {
+    .borderItem{
+        border: none !important;
+        width: auto !important;
+    }
+}
+
+@include breakpoint(mobileandrotate) {
+    .benefits{
+        flex-direction: column;
+        .borderItem{
+            justify-content: flex-start;
+        }
+    }
+}

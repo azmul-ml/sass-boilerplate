@@ -8,6 +8,7 @@
     .footerContentSection{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
 
         ul{
             flex: 14%;
@@ -97,5 +98,11 @@
         text-align: center;
         color: $deep-white;
         font-weight: 200;
+    }
+}
+
+@include breakpoint(mobileandrotate) {
+    .footerContentSection{
+        flex-direction: column;
     }
 }

@@ -1,0 +1,68 @@
+@import 'app/styles/abstracts/_variables.scss';
+
+.parent{
+        margin-top: 80px;
+        h2{
+            font-size: 38px;
+            margin-bottom: 28px;
+        }
+        :global(.slider) {
+            margin:0 16px;
+            overflow: hidden;
+            padding: 22px 0;
+            img {
+                width: 100%;
+            }
+            .bookName{
+                font-size: 20px;
+                margin-top: 24px;
+                
+            }
+            .writerName{
+                margin: 10px 0;
+            }
+            ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                h4{
+                    font-size: 20px;
+                }
+                li{
+                    list-style-type: none;
+                }
+            }
+            button{
+                width: 100%;
+                margin-top: 24px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $purple-accent;
+                background-color: $purple-accent;
+                color: $white;
+                height: 48px;
+                border-radius: 4px;
+                img{
+                    width: 24px;
+                }
+                span{
+                    font-size: 16px;
+                }
+            }
+        }
+      
+      :global(.react-multi-carousel-list) {
+        padding: 0rem 0 2rem 0;
+      }
+      
+      :global(.custom-dot-list-style button){
+        border: none;
+        background: $light-gray;
+      }
+      :global(.react-multi-carousel-dot.react-multi-carousel-dot--active button){
+        background: $purple-accent !important;
+      }
+}
+
